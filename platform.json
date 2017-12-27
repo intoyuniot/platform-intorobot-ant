@@ -1,0 +1,57 @@
+{
+    "name": "intorobot-ant",
+    "title": "ST STM32",
+    "description": "The STM32 family of 32-bit Flash MCUs based on the ARM Cortex-M processor is designed to offer new degrees of freedom to MCU users. It offers a 32-bit product range that combines very high performance, real-time capabilities, digital signal processing, and low-power, low-voltage operation, while maintaining full integration and ease of development.",
+    "url": "http://www.st.com/web/en/catalog/mmc/FM141/SC1169?sc=stm32",
+    "homepage": "http://platformio.org/platforms/ststm32",
+    "license": "Apache-2.0",
+    "engines": {
+        "platformio": "^3.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/intoyuniot/platform-intorobot-ant.git"
+    },
+    "version": "1.0.9",
+    "packageRepositories": [
+        "http://dl.intoyun.com/intoyuniot/packages/manifest.json"
+    ],
+    "frameworks": {
+        "intorobot": {
+            "package": "framework-intorobotststm32",
+            "script": "builder/frameworks/intorobot.py"
+        }
+    },
+    "packages": {
+        "toolchain-gccarmnoneeabi": {
+            "type": "toolchain",
+            "version": "~1.40903.0"
+        },
+        "framework-intorobotststm32": {
+            "type": "framework",
+            "optional": true,
+            "version": "~1.6.7"
+        },
+        "tool-stlink": {
+            "type": "uploader",
+            "optional": true,
+            "version": "~1.10301.0"
+        },
+        "tool-stm32duino": {
+            "type": "uploader",
+            "optional": true,
+            "version": "~1.0.0"
+        },
+        "tool-intorobotststm32": {
+            "type": "uploader",
+            "optional": true,
+            "version": "~1.0.0"
+        },
+        "tool-openocd": {
+            "type": "debugger",
+            "optional": true,
+            "version": "~1.1000.0"
+        }
+    }
+}
+

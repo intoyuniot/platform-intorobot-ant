@@ -1,0 +1,62 @@
+{
+    "build": {
+        "core": "intorobot",
+        "cpu": "cortex-m3",
+        "extra_flags": "-DSTM32L151xB -DPLATFORM_ID=868009 -DPLATFORM_NAME=ant",
+        "f_cpu": "32000000L",
+        "hwids": [
+            ["0x0483", "0xdf11"],
+            ["0x0483", "0x5740"]
+        ],
+        "ldscript": "linker_stm32l151xb_app.ld",
+        "startup_object": "startup_stm32l151xb.S.o",
+        "mcu": "STM32L1",
+        "variant": "intorobot-ant"
+    },
+    "frameworks": [
+        "intorobot",
+        "mbed",
+        "arduino"
+    ],
+    "name": "IntoRobot ant(128k flash, 16k sram)",
+    "upload": {
+        "disable_flushing": false,
+        "maximum_ram_size": 16384,
+        "maximum_size": 106496,
+        "protocol": "dfu",
+        "require_upload_port": true,
+        "use_1200bps_touch": false,
+        "wait_for_upload_port": false,
+        "address": "0x08006000"
+    },
+    "url": "https://www.intoyun.com/hardware",
+    "vendor": "IntoRobot",
+    "debug": {
+        "tools": {
+            "stlink-v2": {
+                "server": {
+                    "package": "tool-openocd",
+                    "executable": "bin/openocd",
+                    "arguments": [
+                        "-f", "scripts/interface/stlink-v2.cfg",
+                        "-c", "transport select hla_swd",
+                        "-f", "scripts/target/stm32f4x.cfg"
+                    ]
+                },
+                "default": true
+            },
+            "stlink-v2-1": {
+                "server": {
+                    "package": "tool-openocd",
+                    "executable": "bin/openocd",
+                    "arguments": [
+                        "-f", "scripts/interface/stlink-v2-1.cfg",
+                        "-c", "transport select hla_swd",
+                        "-f", "scripts/target/stm32f4x.cfg"
+                    ]
+                }
+            }
+        }
+    }
+}
+
