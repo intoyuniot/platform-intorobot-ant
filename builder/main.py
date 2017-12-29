@@ -139,7 +139,7 @@ if env.subst("$UPLOAD_PROTOCOL") == "gdb":
     )
 
 elif env.subst("$UPLOAD_PROTOCOL") in ("serial", "dfu") \
-        and "arduino" in env.subst("$PIOFRAMEWORK"):
+        and "intorobot" in env.subst("$PIOFRAMEWORK"):
     _upload_tool = "serial_upload"
     _upload_flags = ["{upload.altID}", "{upload.usbID}"]
     if env.subst("$UPLOAD_PROTOCOL") == "dfu":
@@ -181,13 +181,7 @@ AlwaysBuild(target_size)
 # Target: Upload by default .bin file
 #
 
-if "mbed" in env.subst("$PIOFRAMEWORK") and not env.subst("$UPLOAD_PROTOCOL"):
-    target_upload = env.Alias(
-        "upload", target_firm,
-        [env.VerboseAction(env.AutodetectUploadPort,
-                           "Looking for upload disk..."),
-         env.VerboseAction(env.UploadToDisk, "Uploading $SOURCE")])
-elif env.subst("$PIOFRAMEWORK") in ("intorobot", "arduino") and \
+if env.subst("$PIOFRAMEWORK") in ("intorobot") and \
         env.subst("$UPLOAD_PROTOCOL") != "stlink":
 
     def BeforeUpload(target, source, env):
