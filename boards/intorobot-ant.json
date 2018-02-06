@@ -18,7 +18,7 @@
         "mbed",
         "arduino"
     ],
-    "name": "IntoRobot ant(128k flash, 16k sram)",
+    "name": "IntoRobot Ant(128k flash, 16k sram)",
     "upload": {
         "disable_flushing": false,
         "maximum_ram_size": 16384,
