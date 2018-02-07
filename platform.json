@@ -12,7 +12,7 @@
         "type": "git",
         "url": "https://github.com/intoyuniot/platform-intorobot-ant.git"
     },
-    "version": "1.0.3",
+    "version": "1.0.4",
     "packageRepositories": [
         "http://dl.intoyun.com/intoyuniot/packages/manifest.json"
     ],
@@ -30,7 +30,7 @@
         "framework-intorobot-ant": {
             "type": "framework",
             "optional": true,
-            "version": "~1.6.9"
+            "version": "~1.6.10"
         },
         "tool-stlink": {
             "type": "uploader",
