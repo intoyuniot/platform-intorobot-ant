@@ -2,14 +2,14 @@
     "build": {
         "core": "intorobot",
         "cpu": "cortex-m3",
-        "extra_flags": "-DSTM32L151xB -DPLATFORM_ID=868009 -DPLATFORM_NAME=ant",
+        "extra_flags": "-DSTM32L151xBA -DPLATFORM_ID=868009 -DPLATFORM_NAME=ant",
         "f_cpu": "32000000L",
         "hwids": [
             ["0x0483", "0xdf11"],
             ["0x0483", "0x5740"]
         ],
-        "ldscript": "linker_stm32l151xb_app.ld",
-        "startup_object": "startup_stm32l151xb.S.o",
+        "ldscript": "linker_stm32l151xba_app.ld",
+        "startup_object": "startup_stm32l151xba.S.o",
         "mcu": "STM32L1",
         "variant": "intorobot-ant"
     },
@@ -18,10 +18,10 @@
         "mbed",
         "arduino"
     ],
-    "name": "IntoRobot Ant(128k flash, 16k sram)",
+    "name": "IntoRobot Ant(128k flash, 32k sram)",
     "upload": {
         "disable_flushing": false,
-        "maximum_ram_size": 16384,
+        "maximum_ram_size": 32768,
         "maximum_size": 106496,
         "protocol": "dfu",
         "require_upload_port": true,
@@ -40,7 +40,7 @@
                     "arguments": [
                         "-f", "scripts/interface/stlink-v2.cfg",
                         "-c", "transport select hla_swd",
-                        "-f", "scripts/target/stm32f4x.cfg"
+                        "-f", "scripts/target/stm32l1x.cfg"
                     ]
                 },
                 "default": true
@@ -52,7 +52,7 @@
                     "arguments": [
                         "-f", "scripts/interface/stlink-v2-1.cfg",
                         "-c", "transport select hla_swd",
-                        "-f", "scripts/target/stm32f4x.cfg"
+                        "-f", "scripts/target/stm32l1x.cfg"
                     ]
                 }
             }
