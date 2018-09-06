@@ -85,6 +85,7 @@ env.Append(
         ("INTOYUN", 1),
         ("FIRMLIB_VERSION_STRING", FRAMEWORK_VERSION),
         ("PLATFORM_THREADING", 1),
+        ("PLATFORM_LOG", 0),
         ("INTOROBOT_ARCH_ARM"),
         ("INTOROBOT_PLATFORM"),
         ("RELEASE_BUILD")
